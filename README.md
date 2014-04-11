@@ -32,7 +32,9 @@ Essentially you have two options:
 1. [Download this repo](https://github.com/gpmd/vagrant-puppet-boilerplate/archive/master.zip), and put all the contents (except `README.md`) into the `myproject/site/` directory.
 2. Download this repo and drop the [config.yaml](https://github.com/gpmd/vagrant-puppet-boilerplate/blob/master/puphpet/config.yaml) file onto the [puphpet.com](https://puphpet.com/) webpage, enabling you to modify the settings and create your own manifest.
 
-Whether you choose to download this repo or just use the `config.yaml` file with [puphpet.com](https://puphpet.com/), you will need to change all instances of 'myproject' in `config.yaml` to the actual name of your project. You should also make sure any directory paths are correct - again, we are assuming your webroot is `myproject/site/public_html/`, but if it's not you'll need to find the relevant section in `config.yaml` and change it.
+Whether you choose to download this repo or just use the `config.yaml` file with [puphpet.com](https://puphpet.com/), you will need to change all instances of 'myproject' in `config.yaml` to the actual name of your project.
+
+You should also make sure the paths in `config.yaml` are correct - again, we are assuming your webroot is `myproject/site/public_html/`, but if it's not you'll need to find the relevant section in `config.yaml` and change it.
 
 Either way, it's worth familiarising yourself with [puphpet.com](https://puphpet.com/) to see what options are available to you.
 
@@ -49,7 +51,7 @@ You can find out more about this on the [Server section of the PuPHPet website](
 
 ### Modifying your hosts file
 
-On a Mac (and Linux I believe) the `hosts` files can be found in `/etc/hosts`. Simply add a new entry to the end of this file, something like:
+On a Mac (and Linux I believe) the `hosts` files can be found in `/etc/hosts`. Simply add a new entry to the end of this file:
 
 `192.168.56.101 myproject.dev`
 
