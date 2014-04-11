@@ -57,7 +57,7 @@ On a Mac (and Linux I believe) the `hosts` files can be found in `/etc/hosts`. S
 
 **Note: all `vagrant` commands should be run from your `myproject/site/` directory (and not from 'inside' the virtual machine)**
 
-In order to set up your virtual machine for the first time, or to restart it if you've halted it you need to run:
+In order to set up your virtual machine for the first time (fair warning - this could take quite a while), or to restart it if you've halted it you need to run:
 
 ```bash
 $ vagrant up
