@@ -85,7 +85,7 @@ You can also just exit the machine (leaving it running in the background):
 $ exit
 ```
 
-If, after having already set up the machine, you add additional shell scripts to `myproject/site/puphpet/files/exec-always`, you can provision these by running:
+If, after having already set up the machine, you add additional shell scripts to `myproject/site/puphpet/files/exec-always` you can provision these by running:
 
 ```bash
 $ vagrant provision
