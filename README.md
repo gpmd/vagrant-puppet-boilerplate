@@ -71,7 +71,7 @@ $ vagrant ssh
 
 **You can now do all your command line work on your project from within the Vagrant box ssh shell.**
 
-You can puy the machine to sleep by running:
+You can put the machine to sleep by running:
 
 ```bash
 $ vagrant halt
