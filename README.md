@@ -41,7 +41,7 @@ Either way, it's worth familiarising yourself with [puphpet.com](https://puphpet
 * Put your own dotfiles in `myproject/site/puphpet/files/dot`.
 * Put your own shell scripts in `myproject/site/puphpet/files/exec-always` or `myproject/site/puphpet/files/exec-once`.
 
-*Node, Grunt, Bower and Compass*
+**Node, Grunt, Bower and Compass**
 
 If you choose to use this repo as-is, we have already added a shell script to `myproject/site/puphpet/files/exec-once` that installs Node, Grunt-cli, Bower and Compass.
 
