@@ -117,9 +117,13 @@ And change it to this:
 config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{folder['id']}", type: nfs, :mount_options => ["dmode=777","fmode=766"]
 ```
 
+**Note: This is not an ideal solution (see below). Once we find a better alternative we will make a note of it here.**
+
 ### Git
 
-We've noticed that when you do a `git status` on your project from within the ssh shell it says all the files have been modified (presumably due to changing the `dmode` and `fmode` above). For this reason I still do all my commits and git 'stuff', outside of the Vagrant box ssh shell.
+We've noticed that when you pull your main project repo and do a `git status` for the first time from within the ssh shell, it will say that all the files have been modified (due to changing the `dmode` and `fmode` above), and you certainly don't want to be recommiting the whole repo with incorrect permissions! For this reason you will still need to do all your commits and git 'stuff', outside of the Vagrant box ssh shell.
+
+This kind of defeats the object of Vagrant though if you have to use Git outside of the virtual machine...
 
 ## More info
 
