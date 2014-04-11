@@ -19,7 +19,9 @@ myproject/site/
 myproject/shared/
 ```
 
-We track our projects one directory up from the site's webroot, which is usually `myproject/site/public_html/`. Therefore, you should clone your main project repo into the `myproject/site/` folder. All assets you don't want tracked by git (such as environment config files, cache folders, media upload folders etc.) should be symlinked from their default locations in `myproject/site/public_html/` into `myproject/shared/`.
+We track our projects one directory up from the site's webroot, which is usually `myproject/site/public_html/`. Therefore, you should clone your main project repo into the `myproject/site/` folder.
+
+All assets you don't want tracked by git (such as environment config files, cache folders, media upload folders etc.) should be symlinked from their default locations in `myproject/site/public_html/` into `myproject/shared/`.
 
 **Important: Don't yet run anything such as `composer install`, `npm install`, `bower install` etc. on your project. You should only do this once your Vagrant box is up-and-running and you are logged in to the ssh shell.**
 
