@@ -1,6 +1,6 @@
 # vagrant-puppet-boilerplate
 
-A simple Vagrant box boilerplate setup using the PuPHPet GUI
+A simple Vagrant box boilerplate setup using the PuPHPet GUI.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ myproject/shared/
 
 We track our projects one directory up from the site's webroot, which is usually `myproject/site/public_html/`. Therefore, you should clone your main project repo into the `myproject/site/` folder. All assets you don't want tracked by git (such as environment config files, cache folders, media upload folders etc.) should be symlinked from their default locations in `myproject/site/public_html/` into `myproject/shared/`.
 
-*Important: Don't yet run anything such as `composer install`, `npm install`, `bower install` etc. on your project. You should only do this once your Vagrant box is up-and-running and you are logged in to the ssh shell.*
+**Important: Don't yet run anything such as `composer install`, `npm install`, `bower install` etc. on your project. You should only do this once your Vagrant box is up-and-running and you are logged in to the ssh shell.**
 
 ### Adding Vagrant
 
@@ -65,7 +65,7 @@ Once the machine has started up and installed all its dependencies you can log i
 $ vagrant ssh
 ```
 
-*You can now do all your command line work on your project from within the Vagrant box ssh shell.*
+**You can now do all your command line work on your project from within the Vagrant box ssh shell.**
 
 You can puy the machine to sleep by running:
 
