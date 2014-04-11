@@ -43,7 +43,7 @@ Either way, it's worth familiarising yourself with [puphpet.com](https://puphpet
 
 **Node, Grunt, Bower and Compass**
 
-If you choose to use this repo as-is, we have already added a shell script to `myproject/site/puphpet/files/exec-once` that installs Node, Grunt-cli, Bower and Compass.
+If you choose to use this repo as-is, we have [already added a shell script](https://github.com/gpmd/vagrant-puppet-boilerplate/blob/master/puphpet/files/exec-once/frontend-tools.sh) to `myproject/site/puphpet/files/exec-once` that installs Node, Grunt-cli, Bower and Compass.
 
 You can find out more about this on the [Server section of the PuPHPet website](https://puphpet.com/#server).
 
