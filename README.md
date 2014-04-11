@@ -29,7 +29,7 @@ All assets you don't want tracked by git (such as environment config files, cach
 
 Essentially you have two options:
 
-1. [Download this repo](https://github.com/gpmd/vagrant-puppet-boilerplate/archive/master.zip), and put all the contents into the `myproject/site/` directory.
+1. [Download this repo](https://github.com/gpmd/vagrant-puppet-boilerplate/archive/master.zip), and put all the contents (except `README.md`) into the `myproject/site/` directory.
 2. Download this repo and drop the [config.yaml](https://github.com/gpmd/vagrant-puppet-boilerplate/blob/master/puphpet/config.yaml) file onto the [puphpet.com](https://puphpet.com/) webpage, enabling you to modify the settings and create your own manifest.
 
 Whether you choose to download this repo or just use the `config.yaml` file with [puphpet.com](https://puphpet.com/), you will need to change all instances of 'myproject' in `config.yaml` to the actual name of your project.
@@ -55,6 +55,8 @@ On a Mac (and Linux I believe) the `hosts` files can be found in `/etc/hosts`. S
 
 ## Using Vagrant
 
+**Note: all `vagrant` commands should be run from your `myproject/site/` directory (and not from 'inside' the virtual machine)**
+
 In order to set up your virtual machine for the first time, or to restart it if you've halted it you need to run:
 
 ```bash
@@ -73,6 +75,14 @@ You can puy the machine to sleep by running:
 
 ```bash
 $ vagrant halt
+```
+
+You can also just exit the machine (leaving it running in the background):
+
+**Note: This command you would run from 'inside' the virtual machine.**
+
+```bash
+$ exit
 ```
 
 If, after having already set up the machine, you add additional shell scripts to `myproject/site/puphpet/files/exec-always`, you can provision these by running:
