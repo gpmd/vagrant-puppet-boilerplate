@@ -1,6 +1,6 @@
 # vagrant-puppet-boilerplate
 
-A simple Vagrant box boilerplate setup using the PuPHPet GUI.
+A simple Vagrant box boilerplate setup (configured using the [PuPHPet](https://puphpet.com/) GUI).
 
 ## Prerequisites
 
