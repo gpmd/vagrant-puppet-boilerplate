@@ -105,7 +105,7 @@ $ vagrant destroy
 
 If you run into a problem whereby Apache can't write to any files/folders you will need to make a change to `myproject/site/Vagrantfile`. [This Github issue](https://github.com/puphpet/puphpet/issues/321) has more information on the problem if you're interested.
 
-Find this line:
+There are a couple of things you can try. Find this line:
 
 ```
 config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{folder['id']}", type: nfs
@@ -123,9 +123,9 @@ Or this:
 config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{folder['id']}", type: nfs, :owner => "www-data", :group => "www-data"
 ```
 
-This first option 'blanket' changes the permissions on all directories and files in your project within the virtual machine. The second option changes the owner and group from `vagrant` to `www-data`.
+This first option 'blanket' changes the permissions on all directories and files in your project within the virtual machine. The second option changes the owner and group from `vagrant` to `www-data`, which plays more nicely with Apache.
 
-**Note: Neither of these are ideal solutions (see below). Also, NEVER do this on a live server, but it's fine for development environments. Once we find a better alternative we will make a note of it here.**
+**Note: Neither of these are ideal solutions (see below). Also, don't do this on a live environment, but it's fine for development environments. If we find a better alternative we will make a note of it here.**
 
 ### Git
 
@@ -142,7 +142,7 @@ echo "--- Stop Git tracking mode changes ---"
 git config --addcd /var --global core.filemode false
 ```
 
-This all seems a bit circuitous, fixing one thing to fix another and so on...
+This all seems a bit circuitous, fixing one thing to fix another...
 
 ## More info
 
