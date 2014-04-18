@@ -137,7 +137,7 @@ One way to get round this (untested), is to tell Git to ignore mode changes. To 
 
 ```
 #!/bin/bash
-#
+
 echo "--- Stop Git tracking mode changes ---"
 git config --addcd /var --global core.filemode false
 ```
