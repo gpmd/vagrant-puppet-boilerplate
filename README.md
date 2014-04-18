@@ -131,7 +131,18 @@ This first option 'blanket' changes the permissions on all directories and files
 
 We've noticed that when you pull your main project repo and do a `git status` for the first time from within the ssh shell, it will say that all the files have been modified (due to changing the `dmode` and `fmode` above), and you certainly don't want to be recommiting the whole repo with incorrect permissions! For this reason you will still need to do all your commits and git 'stuff', outside of the Vagrant box ssh shell.
 
-This kind of defeats the object of Vagrant though if you have to use Git outside of the virtual machine...
+This kind of defeats the object of Vagrant though if you have to use Git outside of the virtual machine.
+
+One way to get round this (untested), is to tell Git to ignore mode changes. To do this add a new file to the `myproject/site/puphpet/files/exec-once` directory. Call it something like `git-config.sh` and put this in it:
+
+```
+#!/bin/bash
+#
+echo "--- Stop Git tracking mode changes ---"
+git config --addcd /var --global core.filemode false
+```
+
+This all seems a bit circuitous, fixing one thing to fix another and so on...
 
 ## More info
 
