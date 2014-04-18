@@ -117,7 +117,15 @@ And change it to this:
 config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{folder['id']}", type: nfs, :mount_options => ["dmode=777","fmode=766"]
 ```
 
-**Note: This is not an ideal solution (see below). Once we find a better alternative we will make a note of it here.**
+Or perhaps better, this:
+
+```
+config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{folder['id']}", type: nfs, :owner => "www-data", :group => "www-data"
+```
+
+This first option 'blanket' changes the permissions on all directories and files in your project within the virtual machine. The second option changes the owner and group from `vagrant` to `www-data`.
+
+**Note: Neither of these are ideal solutions (see below). Also, NEVER do this on a live server, but it's fine for development environments. Once we find a better alternative we will make a note of it here.**
 
 ### Git
 
