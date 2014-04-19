@@ -55,6 +55,8 @@ On a Mac (and Linux I believe) the `hosts` files can be found in `/etc/hosts`. S
 
 `192.168.56.101 myproject.dev`
 
+**Note: The IP address should match the IP address found in `config.yaml`.**
+
 ## Using Vagrant
 
 **Note: all `vagrant` commands should be run from your `myproject/site/` directory (and not from 'inside' the virtual machine)**
