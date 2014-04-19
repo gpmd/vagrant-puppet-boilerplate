@@ -105,7 +105,7 @@ $ vagrant destroy
 
 If you run into a problem whereby Apache can't write to any files/folders you will need to make a change to `myproject/site/Vagrantfile`. [This Github issue](https://github.com/puphpet/puphpet/issues/321) has more information on the problem if you're interested.
 
-Find this line:
+There are a couple of things you can try. Find this line:
 
 ```
 config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{folder['id']}", type: nfs
@@ -117,13 +117,32 @@ And change it to this:
 config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{folder['id']}", type: nfs, :mount_options => ["dmode=777","fmode=766"]
 ```
 
-**Note: This is not an ideal solution (see below). Once we find a better alternative we will make a note of it here.**
+Or this:
+
+```
+config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{folder['id']}", type: nfs, :owner => "www-data", :group => "www-data"
+```
+
+This first option 'blanket' changes the permissions on all directories and files in your project within the virtual machine. The second option changes the owner and group from `vagrant` to `www-data`, which plays more nicely with Apache.
+
+**Note: Neither of these are ideal solutions (see below). Also, don't do this on a live environment, but it's fine for development environments. If we find a better alternative we will make a note of it here.**
 
 ### Git
 
-We've noticed that when you pull your main project repo and do a `git status` for the first time from within the ssh shell, it will say that all the files have been modified (due to changing the `dmode` and `fmode` above), and you certainly don't want to be recommiting the whole repo with incorrect permissions! For this reason you will still need to do all your commits and git 'stuff', outside of the Vagrant box ssh shell.
+You may find Git thinks your whole repo has been modified if you've changed the `dmode` and `fmode` as per the suggestion above - you certainly don't want to be commiting everything again with the wrong permissions!
 
-This kind of defeats the object of Vagrant though if you have to use Git outside of the virtual machine...
+This means you'll still need to do all your git 'stuff', outside of the Vagrant box ssh shell, which kind of defeats the object of Vagrant if you have to use Git outside of the virtual machine.
+
+One way to get round this (untested), is to tell Git to ignore mode changes. To do this add a new file to the `myproject/site/puphpet/files/exec-once` directory. Call it something like `git-config.sh` and put this in it:
+
+```
+#!/bin/bash
+
+echo "--- Stop Git tracking mode changes ---"
+git config --addcd /var --global core.filemode false
+```
+
+This all seems a bit circuitous, fixing one thing to fix another...
 
 ## More info
 
