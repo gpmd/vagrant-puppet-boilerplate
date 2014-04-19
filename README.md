@@ -30,11 +30,11 @@ All assets you don't want tracked by git (such as environment config files, cach
 Essentially you have two options:
 
 1. [Download this repo](https://github.com/gpmd/vagrant-puppet-boilerplate/archive/master.zip), and put all the contents (except `README.md`) into the `myproject/site/` directory.
-2. Download this repo and drop the [config.yaml](https://github.com/gpmd/vagrant-puppet-boilerplate/blob/master/puphpet/config.yaml) file onto the [puphpet.com](https://puphpet.com/) webpage, enabling you to modify the settings and create your own manifest.
+2. Take just the [config.yaml](https://github.com/gpmd/vagrant-puppet-boilerplate/blob/master/puphpet/config.yaml) file from this repo and drop it onto the [puphpet.com](https://puphpet.com/) webpage, enabling you to modify all the settings at will and create your own manifest.
 
-Whether you choose to download this repo or just use the `config.yaml` file with [puphpet.com](https://puphpet.com/), you will need to change all instances of 'myproject' in `config.yaml` to the actual name of your project.
+Whether you choose to download this repo or just use the `config.yaml` file with [puphpet.com](https://puphpet.com/), you will need to change all instances of **'myproject'** in `config.yaml` to the actual name of your project.
 
-You should also make sure the paths in `config.yaml` are correct - again, we are assuming your webroot is `myproject/site/public_html/`, but if it's not you'll need to find the relevant section in `config.yaml` and change it.
+You should also make sure the paths in `config.yaml`, specifically the `synced_folder` and `vhosts` settings, reflect your own environment - again, we are assuming your webroot is `myproject/site/public_html/`, but if it's not you'll need to find the relevant section in `config.yaml` and change it.
 
 Either way, it's worth familiarising yourself with [puphpet.com](https://puphpet.com/) to see what options are available to you.
 
