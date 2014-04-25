@@ -57,6 +57,19 @@ On a Mac (and Linux I believe) the `hosts` files can be found in `/etc/hosts`. S
 
 **Note: The IP address should match the IP address found in `config.yaml`.**
 
+### SSH keys
+
+By default when you first `vagrant up` an `id_rsa` and `id_rsa.pub` file unique to your VM will be created in `/puphpet/files/dot/ssh`. However, you will probably want to replace these with your own `id_rsa` and `id_rsa.pub` files so you can connect to remote private Git repos as usual. Either do this after the first `vagrant up`, or just put them in the `/puphpet/files/dot/ssh` directory before the first provisioning and new ones won't be created.
+
+You may also need to add a `config` file in your host computer's `~/.ssh` folder that contains the following:
+
+```
+Host *
+ForwardAgent yes
+```
+
+This allows the host computer's SSH agent to forward requests from your VM.
+
 ## Using Vagrant
 
 **Note: all `vagrant` commands should be run from your `myproject/site/` directory (and not from 'inside' the virtual machine)**
