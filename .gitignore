@@ -1,0 +1,3 @@
+# Files to ignore
+puphpet/files/dot/ssh/id_rsa
+puphpet/files/dot/ssh/id_rsa.pub
