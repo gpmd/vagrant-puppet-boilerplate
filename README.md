@@ -114,6 +114,18 @@ You can get rid of the machine by running:
 $ vagrant destroy
 ```
 
+### 3.3 Git
+
+The first time you 'up' the box you should set your Git user name and email. Run these two commands consecutively:
+
+```bash
+$ git config --global user.name "Your Name"
+```
+
+```bash
+$ git config --global user.email you@example.com
+```
+
 ## Issues
 
 ### Apache user and group permissions
