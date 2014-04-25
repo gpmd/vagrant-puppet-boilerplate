@@ -105,7 +105,7 @@ $ vagrant destroy
 
 ### Apache user and group permissions
 
-We found that we ran into a problem whereby Apache couldn't write to any files or folders. In order to 'fix' this we made a change to `myproject/site/Vagrantfile`. [This blog post](http://www.robertprice.co.uk/robblog/2013/06/allowing-apache-to-write-to-vagrant/) has more information on the problem if you're interested.
+We found that we ran into a problem whereby Apache couldn't write to any files or folders. In order to 'fix' this we made a change to `myproject/site/Vagrantfile`. [This blog post](http://jeremykendall.net/2013/08/09/vagrant-synced-folders-permissions/) has more information on the problem if you're interested.
 
 We changed this line:
 
@@ -116,7 +116,7 @@ config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{fol
 To this:
 
 ```
-config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{folder['id']}", type: nfs, :owner => "www-data", :group => "www-data"
+config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{folder['id']}", type: nfs, owner: "vagrant", group: "www-data", mount_options: ["dmode=775, fmode=664"]
 ```
 
 This makes sure that Apache has permissions to write to files and folders in the VM synced directory.
