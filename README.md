@@ -132,7 +132,7 @@ $ git config --global user.email you@example.com
 
 We found that we ran into a problem whereby Apache couldn't write to any files or folders. In order to 'fix' this we made a change to `myproject/site/Vagrantfile`. [This blog post](http://jeremykendall.net/2013/08/09/vagrant-synced-folders-permissions/) has more information on the problem if you're interested.
 
-First of all `vagrant up` for the first time. Then, `exit` the VM, open the `Vagrantfile` and find:
+First of all `vagrant up` for the first time. Then open the `Vagrantfile` and find:
 
 ```
 config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{folder['id']}", type: nfs
