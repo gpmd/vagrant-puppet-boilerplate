@@ -111,9 +111,10 @@ php:
     modules:
         php:
             - cli
+            - curl
+            - gd
             - intl
             - mcrypt
-            - gd
         pear: {  }
         pecl:
             - pecl_http
