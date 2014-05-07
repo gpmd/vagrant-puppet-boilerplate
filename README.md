@@ -126,30 +126,6 @@ $ git config --global user.name "Your Name"
 $ git config --global user.email you@example.com
 ```
 
-## Issues
-
-### Apache user and group permissions
-
-We found that we ran into a problem whereby Apache couldn't write to any files or folders. In order to 'fix' this we made a change to `myproject/site/Vagrantfile`. [This blog post](http://jeremykendall.net/2013/08/09/vagrant-synced-folders-permissions/) has more information on the problem if you're interested.
-
-First of all `vagrant up` for the first time. Then open the `Vagrantfile` and find:
-
-```
-config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{folder['id']}", type: nfs
-```
-
-Change it to this:
-
-```
-config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{folder['id']}", type: nfs, owner: "vagrant", group: "www-data", mount_options: ["dmode=775,fmode=664"]
-```
-
-Then finally run `vagrant reload`.
-
-This change makes sure that Apache has permissions to write to files and folders in the VM synced directory.
-
-**Note: This is not an ideal solution – don't do this on a live environment, but it's fine for development environments.**
-
 ## More info
 
 What on earth are Vagrant, Puppet, PuPHPet? Read on...

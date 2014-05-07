@@ -1,3 +1,9 @@
+# OS or Editor folders
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
 # Files to ignore
 puphpet/files/dot/ssh/id_rsa
 puphpet/files/dot/ssh/id_rsa.pub
