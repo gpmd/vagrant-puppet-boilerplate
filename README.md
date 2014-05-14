@@ -80,6 +80,8 @@ In order to set up your virtual machine for the first time (fair warning - this 
 $ vagrant up
 ```
 
+**Note: During the 'up' process you may be asked for a password in order to mount the NFS shared folders. You should enter your host machine's user password.**
+
 Once the machine has started up and installed all its dependencies you can log in to the machine using:
 
 ```bash
